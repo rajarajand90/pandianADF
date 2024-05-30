@@ -1,5 +1,5 @@
 {
-	"name": "sink_csv",
+	"name": "sink_txt",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "pandian_AzureDataLakeStorage1",
