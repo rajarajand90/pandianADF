@@ -55,7 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "sink_csv",
+						"referenceName": "sink_txt",
 						"type": "DatasetReference"
 					}
 				]
