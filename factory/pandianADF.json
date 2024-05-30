@@ -1,0 +1,9 @@
+{
+	"name": "pandianADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8c3be11c-bdbc-4cff-8d52-1f833ea0b69b",
+		"tenantId": "53849be9-025e-4d9c-93e7-98a12e8a86c8"
+	}
+}
