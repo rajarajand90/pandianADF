@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "source_txt",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "pandian_AzureDataLakeStorage1",
