@@ -203,7 +203,7 @@
 												},
 												"inputs": [
 													{
-														"referenceName": "File_source",
+														"referenceName": "get_source",
 														"type": "DatasetReference"
 													}
 												],
