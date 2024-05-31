@@ -1,5 +1,5 @@
 {
-	"name": "File_sink",
+	"name": "File_sink1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "pandian_AzureDataLakeStorage1",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "CSV_format",
+				"folderPath": "Text_format",
 				"fileSystem": "project"
 			},
 			"columnDelimiter": ",",
