@@ -28,7 +28,7 @@
 								"type": "Expression"
 							},
 							"ds_filename": {
-								"value": "@pipeline().parameters.Filedirectory",
+								"value": "@pipeline().parameters.Filename",
 								"type": "Expression"
 							}
 						}
@@ -243,6 +243,9 @@
 			},
 			"Filedirectory": {
 				"type": "String"
+			},
+			"Filename": {
+				"type": "string"
 			}
 		},
 		"folder": {
