@@ -204,7 +204,21 @@
 												"inputs": [
 													{
 														"referenceName": "get_source",
-														"type": "DatasetReference"
+														"type": "DatasetReference",
+														"parameters": {
+															"ds_filesystem": {
+																"value": "@pipeline().parameters.Filesystem",
+																"type": "Expression"
+															},
+															"ds_filedirectory": {
+																"value": "@pipeline().parameters.Filedirectory",
+																"type": "Expression"
+															},
+															"ds_filename": {
+																"value": "@item().name",
+																"type": "Expression"
+															}
+														}
 													}
 												],
 												"outputs": [
