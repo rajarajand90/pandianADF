@@ -1,0 +1,60 @@
+{
+	"name": "extension_copy",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "source_txt",
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_filesystem": {
+								"value": "@pipeline().parameters.Filesystem",
+								"type": "Expression"
+							},
+							"ds_filedirectory": {
+								"value": "@pipeline().parameters.Input_filedirectory",
+								"type": "Expression"
+							}
+						}
+					},
+					"fieldList": [
+						"itemName",
+						"itemType",
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Filesystem": {
+				"type": "String"
+			},
+			"Input_filedirectory": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "pandian_test"
+		},
+		"annotations": []
+	}
+}
