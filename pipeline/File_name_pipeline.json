@@ -130,7 +130,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@activity('Filter1').output.pipelineReturnValue",
+											"value": "@item().activity('Filter1').output.value",
 											"type": "Expression"
 										}
 									}
@@ -162,6 +162,8 @@
 						{
 							"name": "Filter2",
 							"type": "Filter",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
@@ -178,6 +180,8 @@
 						{
 							"name": "Copy data2",
 							"type": "Copy",
+							"state": "Inactive",
+							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [
 								{
 									"activity": "Filter2",
