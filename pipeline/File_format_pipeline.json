@@ -215,7 +215,7 @@
 																"type": "Expression"
 															},
 															"ds_filename": {
-																"value": "@activity('Get Metadata1').output.itemName",
+																"value": "@activity('Get Metadata1').output",
 																"type": "Expression"
 															}
 														}
