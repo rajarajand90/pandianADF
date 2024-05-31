@@ -136,6 +136,10 @@
 															"ds_filedirectory": {
 																"value": "@pipeline().parameters.Filesystem",
 																"type": "Expression"
+															},
+															"ds_filename": {
+																"value": "@activity('Get Metadata1').output.itemName",
+																"type": "Expression"
 															}
 														}
 													}
