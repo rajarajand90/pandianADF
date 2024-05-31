@@ -50,17 +50,59 @@
 				"inputs": [
 					{
 						"referenceName": "source_txt",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_filesystem": {
+								"value": "@pipeline().parameters.Filesystem",
+								"type": "Expression"
+							},
+							"ds_filedirectory": {
+								"value": "@pipeline().parameters.Input_filedirectory",
+								"type": "Expression"
+							},
+							"ds_filename": {
+								"value": "@pipeline().parameters.Filename",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "sink_txt",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_filesystem": {
+								"value": "@pipeline().parameters.Filesystem",
+								"type": "Expression"
+							},
+							"ds_filedirectory": {
+								"value": "@pipeline().parameters.Output_filedirectory",
+								"type": "Expression"
+							},
+							"ds_filename": {
+								"value": "@pipeline().parameters.Filename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"Filesystem": {
+				"type": "String"
+			},
+			"Input_filedirectory": {
+				"type": "String"
+			},
+			"Filename": {
+				"type": "String"
+			},
+			"Output_filedirectory": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "pandian_test"
 		},
