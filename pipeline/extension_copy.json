@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "source_txt",
+						"referenceName": "ex_source",
 						"type": "DatasetReference",
 						"parameters": {
 							"ds_filesystem": {
@@ -25,6 +25,10 @@
 							},
 							"ds_filedirectory": {
 								"value": "@pipeline().parameters.Input_filedirectory",
+								"type": "Expression"
+							},
+							"ds_filename": {
+								"value": "@pipeline().parameters.Filename",
 								"type": "Expression"
 							}
 						}
@@ -50,6 +54,9 @@
 			},
 			"Input_filedirectory": {
 				"type": "String"
+			},
+			"Filename": {
+				"type": "string"
 			}
 		},
 		"folder": {
