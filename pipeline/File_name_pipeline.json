@@ -63,7 +63,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@contains(item().name,'Sales')",
+						"value": "@startswith(item().name,'Sales')",
 						"type": "Expression"
 					}
 				}
