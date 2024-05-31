@@ -144,7 +144,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@split(item().name,'.')[1].csv",
+											"value": "@concat(split(item().name,'.')[1],'.csv')",
 											"type": "Expression"
 										}
 									}
