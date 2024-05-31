@@ -130,7 +130,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@activity('Filter1').item().name",
+											"value": "@item().activity('Filter1').name",
 											"type": "Expression"
 										}
 									}
@@ -241,7 +241,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@activity('Filter2').item().name",
+											"value": "@item().activity('Filter2').name",
 											"type": "Expression"
 										}
 									}
