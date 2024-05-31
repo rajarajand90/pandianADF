@@ -122,8 +122,18 @@
 												},
 												"inputs": [
 													{
-														"referenceName": "File_source",
-														"type": "DatasetReference"
+														"referenceName": "get_source",
+														"type": "DatasetReference",
+														"parameters": {
+															"ds_filesystem": {
+																"value": "@pipeline().parameters.Filesystem",
+																"type": "Expression"
+															},
+															"ds_filedirectory": {
+																"value": "@pipeline().parameters.Filesystem",
+																"type": "Expression"
+															}
+														}
 													}
 												],
 												"outputs": [
@@ -185,8 +195,18 @@
 												},
 												"inputs": [
 													{
-														"referenceName": "File_source",
-														"type": "DatasetReference"
+														"referenceName": "get_source",
+														"type": "DatasetReference",
+														"parameters": {
+															"ds_filesystem": {
+																"value": "@pipeline().parameters.Filesystem",
+																"type": "Expression"
+															},
+															"ds_filedirectory": {
+																"value": "@pipeline().parameters.Filedirectory",
+																"type": "Expression"
+															}
+														}
 													}
 												],
 												"outputs": [
