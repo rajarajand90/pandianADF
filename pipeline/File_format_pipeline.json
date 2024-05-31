@@ -134,7 +134,7 @@
 																"type": "Expression"
 															},
 															"ds_filedirectory": {
-																"value": "@pipeline().parameters.Filesystem",
+																"value": "@pipeline().parameters.Filedirectory",
 																"type": "Expression"
 															},
 															"ds_filename": {
