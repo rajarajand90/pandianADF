@@ -130,7 +130,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@startswith(item().name,'Sales')",
+											"value": "@activity('Filter1').output",
 											"type": "Expression"
 										}
 									}
@@ -146,8 +146,6 @@
 						{
 							"name": "Filter1",
 							"type": "Filter",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
@@ -243,7 +241,7 @@
 											"type": "Expression"
 										},
 										"ds_filename": {
-											"value": "@item().name",
+											"value": "@activity('Filter2').output",
 											"type": "Expression"
 										}
 									}
