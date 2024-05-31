@@ -35,7 +35,8 @@
 					},
 					"fieldList": [
 						"childItems",
-						"itemName"
+						"itemName",
+						"itemType"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
