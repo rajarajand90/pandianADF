@@ -5,14 +5,34 @@
 			"referenceName": "pandian_AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ds_filesystem": {
+				"type": "string"
+			},
+			"ds_filedirectory": {
+				"type": "string"
+			},
+			"ds_filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SalesLTProduct.txt",
-				"folderPath": "Output",
-				"fileSystem": "project"
+				"fileName": {
+					"value": "@dataset().ds_filename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().ds_filedirectory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().ds_filesystem",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
