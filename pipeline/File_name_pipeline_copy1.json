@@ -71,12 +71,12 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@equals(startswith(item().name,'Sales'),item().name)",
+									"value": "@startswith(item().name,'Sales')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
 									{
-										"name": "MarketingWait1",
+										"name": "SalesWait1",
 										"type": "Wait",
 										"dependsOn": [],
 										"userProperties": [],
@@ -168,12 +168,12 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@equals(startswith(item().name,'Marketing'),item().name)",
+									"value": "@startswith(item().name,'Marketing')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
 									{
-										"name": "SalesWait1_copy1",
+										"name": "MarketingWait1",
 										"type": "Wait",
 										"dependsOn": [],
 										"userProperties": [],
