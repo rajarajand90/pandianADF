@@ -12,12 +12,6 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
-		"typeProperties": {
-			"table": {
-				"value": "@dataset().ds_filename",
-				"type": "Expression"
-			}
-		}
+		"schema": []
 	}
 }
