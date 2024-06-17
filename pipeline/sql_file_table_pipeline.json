@@ -95,7 +95,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"ds_filename": {
-											"value": "@item().Name",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
