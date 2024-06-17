@@ -14,11 +14,10 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": {
+			"table": {
 				"value": "@dataset().ds_filename",
 				"type": "Expression"
-			},
-			"table": ""
+			}
 		}
 	}
 }
