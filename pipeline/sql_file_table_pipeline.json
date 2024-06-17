@@ -75,10 +75,6 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
-									"preCopyScript": {
-										"value": "Truncate table @(replace(replace(pipeline().parameters.ds_filename,'file','table'),'.txt',''))",
-										"type": "Expression"
-									},
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false,
 									"disableMetricsCollection": false
@@ -110,7 +106,7 @@
 									"referenceName": "sql_sink",
 									"type": "DatasetReference",
 									"parameters": {
-										"ds_filename": {
+										"tablename": {
 											"value": "@replace(replace(item().name,'file','table'),'.txt','')",
 											"type": "Expression"
 										}
