@@ -1,0 +1,37 @@
+{
+	"name": "sql_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "pandian_AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().ds_filename",
+					"type": "Expression"
+				},
+				"folderPath": "Input",
+				"fileSystem": "project"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "AddressID\tAddressLine1\tAddressLine2\tCity\tStateProvince\tCountryRegion\tPostalCode\trowguid\tModifiedDate",
+				"type": "String"
+			}
+		]
+	}
+}
