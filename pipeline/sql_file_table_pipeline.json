@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
-				"type": "Copy",
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -15,72 +15,113 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+					"dataset": {
+						"referenceName": "Get_source1",
+						"type": "DatasetReference"
 					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": {
-							"value": "Truncate table @(replace(replace(pipeline().parameters.ds_filename,'file','table'),'.txt',''))",
-							"type": "Expression"
-						},
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"tableOption": {
-							"value": "@replace(replace(pipeline().parameters.ds_filename,'file','table'),'.txt','')",
-							"type": "Expression"
-						},
-						"disableMetricsCollection": false
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
 					}
-				},
-				"inputs": [
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
 					{
-						"referenceName": "sql_source",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_filename": {
-								"value": "@pipeline().parameters.ds_filename",
-								"type": "Expression"
-							}
-						}
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
 				],
-				"outputs": [
-					{
-						"referenceName": "sql_sink",
-						"type": "DatasetReference",
-						"parameters": {
-							"ds_filename": {
-								"value": "@pipeline().parameters.ds_filename",
-								"type": "Expression"
-							}
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get Metadata1').output.childItems",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "AzureSqlSink",
+									"preCopyScript": {
+										"value": "Truncate table @(replace(replace(pipeline().parameters.ds_filename,'file','table'),'.txt',''))",
+										"type": "Expression"
+									},
+									"writeBehavior": "insert",
+									"sqlWriterUseTableLock": false,
+									"disableMetricsCollection": false
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "sql_source",
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_filename": {
+											"value": "@item().Name",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "sql_sink",
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_filename": {
+											"value": "@replace(replace(item().name,'file','table'),'.txt','')",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
-					}
-				]
+					]
+				}
 			}
 		],
-		"parameters": {
-			"ds_filename": {
-				"type": "string"
-			}
-		},
 		"folder": {
 			"name": "pandian_test"
 		},
