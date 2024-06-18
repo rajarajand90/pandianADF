@@ -108,7 +108,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
-											"value": "@replace(item().name,'file','table')",
+											"value": "@replace(replace(item().name,'file','table'),'.txt','')",
 											"type": "Expression"
 										}
 									}
