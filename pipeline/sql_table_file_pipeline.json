@@ -17,14 +17,15 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select table_schema, table_name from information_schema.tables\nwhere table_type='base table' and table_schema='SalesLT'",
+						"sqlReaderQuery": "SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.TABLES\r\nWHERE TABLE_TYPE='BASE TABLE' and TABLE_SCHEMA='SalesLT'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
 						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
