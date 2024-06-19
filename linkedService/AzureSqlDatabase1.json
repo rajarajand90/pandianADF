@@ -5,13 +5,13 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "sql26thmay.database.windows.net",
-			"database": "database26thmay",
+			"server": "sql-server-19june.database.windows.net",
+			"database": "sql-db-19june",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
-			"userName": "rajarajand90",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDlGNEIwQkIxLTE5MDEtNERDOS1CMTU0LTA1QUVEMDI0MkNCMF80M2ZlZjFmYS1mMDVlLTQ1OTMtOGNlNS03NGRhNDZmMzM0MWIiDQp9"
+			"userName": "pandi1607",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDJDQjVGQUU2LTgyREMtNEUyQi1CQjhBLTkyQTBGOTBGRDQ2MF84Y2Q2YmU2MS1kOTNlLTRhOWItYWNmZS00MGNlMzJlMjM5MzEiDQp9"
 		}
 	}
 }
