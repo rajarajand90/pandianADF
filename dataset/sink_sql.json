@@ -22,7 +22,7 @@
 				"folderPath": "sqlfiles",
 				"fileSystem": "project"
 			},
-			"columnDelimiter": "\t",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
