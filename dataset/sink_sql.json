@@ -19,7 +19,7 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"folderPath": "sqlfiles",
+				"folderPath": "Input",
 				"fileSystem": "project"
 			},
 			"columnDelimiter": ",",
