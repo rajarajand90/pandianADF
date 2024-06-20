@@ -8,6 +8,9 @@
 		"parameters": {
 			"schemaname": {
 				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
