@@ -18,7 +18,8 @@
 				"folderPath": {
 					"value": "@dataset().ds_foldername",
 					"type": "Expression"
-				}
+				},
+				"fileSystem": "project"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
