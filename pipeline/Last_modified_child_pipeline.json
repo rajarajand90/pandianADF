@@ -256,6 +256,9 @@
 				"defaultValue": "1900-01-01 00:00:00"
 			}
 		},
+		"folder": {
+			"name": "pandian_test"
+		},
 		"annotations": []
 	}
 }
