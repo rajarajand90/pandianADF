@@ -1,0 +1,57 @@
+{
+	"name": "Last_modified_child_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_foldername": {
+								"value": "@pipeline().parameters.foldername",
+								"type": "Expression"
+							}
+						}
+					},
+					"fieldList": [
+						"childItems"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"foldername": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"latest_fname": {
+				"type": "String"
+			},
+			"ref_date": {
+				"type": "String",
+				"defaultValue": "1900-01-01 00:00:00"
+			}
+		},
+		"annotations": []
+	}
+}
