@@ -15,7 +15,7 @@
 				"fileSystem": "project"
 			},
 			"columnDelimiter": ",",
-			"compressionCodec": "deflate",
+			"compressionCodec": "ZipDeflate",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
